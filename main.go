@@ -26,5 +26,13 @@ func main() {
 		})
 	})
 
+	app.Get("/fahmi", fahmi)
+
 	app.Listen(getPort())
+}
+
+func fahmi (c *fiber.Ctx) error {
+	return c.JSON(fiber.Map{
+		"message": "Hello, Fahmi!",
+	})
 }
